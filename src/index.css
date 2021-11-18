@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: "Roboto", "Nanum Gothic", sans-serif;
+  color: #606060;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
