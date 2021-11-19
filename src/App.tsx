@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -11,16 +11,20 @@ import theme from "./styles/theme";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header />
+      <StyledApp>
+        <Header id="Home" />
         <Nav />
-        <About />
-        <Skill />
-        <Work />
-        <Contact />
-      </div>
+        <About id="About" />
+        <Skill id="Skill" />
+        <Work id="Work&Project" />
+        <Contact id="Contact" />
+      </StyledApp>
     </ThemeProvider>
   );
 }
 
 export default App;
+
+const StyledApp = styled.main`
+  position: relative;
+`;

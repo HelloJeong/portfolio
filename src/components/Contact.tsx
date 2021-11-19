@@ -1,5 +1,7 @@
-const Contact: React.FC = () => {
-  return <div>Contact</div>;
+import { IContactProps } from "../type";
+
+const Contact: React.FC<IContactProps> = ({ id }) => {
+  return <div id={id}>Contact</div>;
 };
 
 export default Contact;
