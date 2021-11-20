@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledH1, StyledSection } from "../styles/common";
 import { IAboutProps } from "../type";
 
 /* eslint-disable jsx-a11y/anchor-is-valid, react/jsx-no-target-blank */
@@ -31,20 +32,6 @@ const About: React.FC<IAboutProps> = ({ id }) => {
 
 export default About;
 
-const StyledSection = styled.section`
-  box-sizing: border-box;
-  padding-top: 60px;
-  padding-bottom: 60px;
-`;
-
-const StyledH1 = styled.h1`
-  ${(props) => props.theme.flexCenter};
-  color: ${(props) => props.theme.titleFontColor};
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-`;
-
 const StyledParagraphWrap = styled.div`
   ${(props) => props.theme.flexCenter};
   flex-direction: column;
@@ -54,6 +41,6 @@ const StyledParagraphWrap = styled.div`
 const StyledParagraph = styled.p`
   a {
     text-decoration: underline;
-    color: ${(props) => props.theme.basicFontColor};
+    color: ${(props) => props.theme.light.basicFontColor};
   }
 `;

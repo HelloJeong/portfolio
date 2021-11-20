@@ -1,20 +1,24 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
+import _ from "lodash";
 
 /* eslint-disable jsx-a11y/anchor-is-valid, no-script-url */
 const Nav: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (!navRef.current) {
-        return;
-      }
-      if (window.scrollY < 100) {
-        navRef.current.style.backgroundColor = "transparent";
-      } else {
-        navRef.current.style.backgroundColor = "#fff";
-      }
-    });
+    window.addEventListener(
+      "scroll",
+      _.throttle(() => {
+        if (!navRef.current) {
+          return;
+        }
+        if (window.scrollY < 100) {
+          navRef.current.classList.remove("scroll");
+        } else {
+          navRef.current.classList.add("scroll");
+        }
+      }, 300)
+    );
   }, []);
   return (
     <StyledNav ref={navRef}>
@@ -52,6 +56,16 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-end;
   transition: 0.5s;
+  border-bottom: none;
+  background-color: transparent;
+
+  &.scroll {
+    border-bottom: 1px solid #b9b9b9;
+    background-color: #fff;
+    ul li a {
+      color: #5f5f5f;
+    }
+  }
 `;
 
 const StyledUl = styled.ul`
@@ -79,7 +93,7 @@ const StyledLi = styled.li`
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: ${(props) => props.theme.navFontColor};
+    color: ${(props) => props.theme.light.navFontColor};
     font-size: 16px;
   }
 `;

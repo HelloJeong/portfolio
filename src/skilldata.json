@@ -1,0 +1,76 @@
+{
+  "skills": [
+    {
+      "img": "js.jpg",
+      "name": "Javascript",
+      "progress": 80,
+      "type": "js"
+    },
+    {
+      "img": "react.jpg",
+      "name": "React.js",
+      "progress": 80,
+      "type": "js"
+    },
+    {
+      "img": "express.jpg",
+      "name": "Express.js",
+      "progress": 80,
+      "type": "js"
+    },
+    {
+      "img": "html.jpg",
+      "name": "HTML",
+      "progress": 80,
+      "type": "front"
+    },
+    {
+      "img": "typescript.jpg",
+      "name": "Typescript",
+      "progress": 70,
+      "type": "js"
+    },
+    {
+      "img": "css.jpg",
+      "name": "CSS",
+      "progress": 70,
+      "type": "front"
+    },
+    {
+      "img": "sass.jpg",
+      "name": "Sass",
+      "progress": 65,
+      "type": "front"
+    },
+    {
+      "img": "mongo.jpg",
+      "name": "MongoDB",
+      "progress": 70,
+      "type": "db"
+    },
+    {
+      "img": "mysql.jpg",
+      "name": "MySQL",
+      "progress": 70,
+      "type": "db"
+    },
+    {
+      "img": "nextjs.jpg",
+      "name": "Next.js",
+      "progress": 40,
+      "type": "js"
+    },
+    {
+      "img": "vue.jpg",
+      "name": "Vue.js",
+      "progress": 30,
+      "type": "js"
+    },
+    {
+      "img": "graphql.jpg",
+      "name": "GraphQL",
+      "progress": 30,
+      "type": "api"
+    }
+  ]
+}
