@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import bg from "../images/bg-header.jpg";
+import { StyledInner } from "../styles/common";
 import { IHeaderProps } from "../type";
 import HeaderSlider from "./HeaderSlider";
 
@@ -52,9 +53,8 @@ const StyledBG = styled.div`
   /* opacity: 0.5; */
 `;
 
-const StyledTextureBlock = styled.div`
+const StyledTextureBlock = styled(StyledInner)`
   position: relative;
-  display: flex;
   flex-direction: column;
   font-size: 64px;
   font-weight: 700;

@@ -25,6 +25,8 @@ export interface IWorkProps extends ICommonProp {}
 export interface IContactProps extends ICommonProp {}
 
 // redux
+
+// skill
 export interface ISkillType {
   img: string;
   name: string;
@@ -34,4 +36,19 @@ export interface ISkillType {
 
 export interface ISkillState {
   skills: ISkillType[];
+}
+
+// work
+export interface IWorkType {
+  img: string;
+  title: string;
+  member: number;
+  skills: string[];
+  start_date: string;
+  end_date: string;
+  text: string;
+}
+
+export interface IWorkState {
+  works: IWorkType[];
 }

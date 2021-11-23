@@ -8,8 +8,8 @@ const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
     let value = 1;
     const interval = setInterval(() => {
       if (value === progress) {
-        console.log(1);
         clearInterval(interval);
+        return;
       }
       if (!itemRef.current) {
         return;
@@ -39,6 +39,8 @@ const StyledLi = styled.li`
   align-items: center;
   flex-wrap: nowrap;
   gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
   img {
     width: 50px;
     height: 100%;

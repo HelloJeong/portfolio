@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { RootState } from "../redux/modules";
 import { getskill, sortProgress, sortType } from "../redux/modules/skill";
-import { StyledH1, StyledSection } from "../styles/common";
+import { StyledH1, StyledInnerColumnWrap, StyledSection } from "../styles/common";
 import { ISkillProps } from "../type";
 import SkillItem from "./SkillItem";
 
 const Skill: React.FC<ISkillProps> = ({ id }) => {
-  const listRef = useRef<HTMLUListElement>(null);
   const [sortState, setSortState] = useState<boolean>(false); // t : 주제, f : 수치
 
   const skills = useSelector((state: RootState) => state.skill.skills);
@@ -20,18 +19,20 @@ const Skill: React.FC<ISkillProps> = ({ id }) => {
 
   return (
     <StyledSkillSection id={id}>
-      <StyledH1>Skill</StyledH1>
-      <StyledH3>- 현재 {sortState ? "주제" : "수치"}별 정렬 상태 -</StyledH3>
-      <StyledH3>
-        <button onClick={onClickSort}>정렬 바꾸기</button>
-      </StyledH3>
-      <StyledItemWrap>
-        <StyledItemList ref={listRef}>
-          {skills.map((skill, idx) => {
-            return <SkillItem key={`skill${idx}`} {...skill} />;
-          })}
-        </StyledItemList>
-      </StyledItemWrap>
+      <StyledInnerColumnWrap>
+        <StyledH1>Skill</StyledH1>
+        <StyledH3>- 현재 {sortState ? "주제" : "수치"}별 정렬 상태 -</StyledH3>
+        <StyledH3>
+          <button onClick={onClickSort}>정렬 바꾸기</button>
+        </StyledH3>
+        <StyledItemWrap>
+          <StyledItemList>
+            {skills.map((skill, idx) => {
+              return <SkillItem key={`skill${idx}`} {...skill} />;
+            })}
+          </StyledItemList>
+        </StyledItemWrap>
+      </StyledInnerColumnWrap>
     </StyledSkillSection>
   );
 

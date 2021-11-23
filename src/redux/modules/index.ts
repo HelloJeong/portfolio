@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import skill from "./skill";
+import work from "./work";
 
 const rootReducer = combineReducers({
   skill,
+  work,
 });
 
 export default rootReducer;
