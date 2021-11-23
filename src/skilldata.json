@@ -58,13 +58,13 @@
       "img": "nextjs.svg",
       "name": "Next.js",
       "progress": 40,
-      "type": "js"
+      "type": "front"
     },
     {
       "img": "vue.svg",
       "name": "Vue.js",
       "progress": 30,
-      "type": "js"
+      "type": "front"
     },
     {
       "img": "graphql.svg",

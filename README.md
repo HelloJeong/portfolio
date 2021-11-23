@@ -5,6 +5,7 @@
 - react
 - typescript
 - styled-components
-- redux
+- redux: skills, works
+- lodash: throttle 기능
 
 와이어프레임에 맞춰 구현한다.

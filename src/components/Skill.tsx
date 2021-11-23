@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { RootState } from "../redux/modules";
@@ -8,6 +8,7 @@ import { ISkillProps } from "../type";
 import SkillItem from "./SkillItem";
 
 const Skill: React.FC<ISkillProps> = ({ id }) => {
+  const listRef = useRef<HTMLUListElement>(null);
   const [sortState, setSortState] = useState<boolean>(false); // t : 주제, f : 수치
 
   const skills = useSelector((state: RootState) => state.skill.skills);
@@ -25,7 +26,7 @@ const Skill: React.FC<ISkillProps> = ({ id }) => {
         <button onClick={onClickSort}>정렬 바꾸기</button>
       </StyledH3>
       <StyledItemWrap>
-        <StyledItemList>
+        <StyledItemList ref={listRef}>
           {skills.map((skill, idx) => {
             return <SkillItem key={`skill${idx}`} {...skill} />;
           })}

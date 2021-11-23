@@ -1,12 +1,32 @@
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { ISkillType } from "../type";
 
 const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
+  const itemRef = useRef<HTMLProgressElement>(null);
+  useEffect(() => {
+    let value = 1;
+    const interval = setInterval(() => {
+      if (value === progress) {
+        console.log(1);
+        clearInterval(interval);
+      }
+      if (!itemRef.current) {
+        return;
+      }
+      itemRef.current.value = ++value;
+    }, 10);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [progress]);
+
   return (
     <StyledLi>
       <img src={`/images/skill-${img}`} alt={name} />
       <h3>{name}</h3>
-      <progress value={progress} max="100"></progress>
+      <progress ref={itemRef} value="0" max="100" />
     </StyledLi>
   );
 };
@@ -32,7 +52,20 @@ const StyledLi = styled.li`
     align-items: center;
   }
   progress {
+    display: block;
     width: 400px;
     height: 30px;
+    appearance: none;
+    border-radius: 10px;
+    color: ${(props) => props.theme.light.titleFontColor};
+
+    &::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 10px;
+    }
+    &::-webkit-progress-value {
+      background-color: ${(props) => props.theme.light.titleFontColor};
+      border-radius: 8px;
+    }
   }
 `;
