@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100%;
   margin: 0;

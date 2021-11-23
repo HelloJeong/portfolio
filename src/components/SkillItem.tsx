@@ -4,7 +4,7 @@ import { ISkillType } from "../type";
 const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
   return (
     <StyledLi>
-      <img src={`images/${img}`} />
+      <img src={`/images/skill-${img}`} alt={name} />
       <h3>{name}</h3>
       <progress value={progress} max="100"></progress>
     </StyledLi>
@@ -22,10 +22,12 @@ const StyledLi = styled.li`
   img {
     width: 50px;
     height: 100%;
+    border-radius: 10px;
   }
   h3 {
     width: 100px;
     height: 100%;
+    font-weight: 700;
     display: flex;
     align-items: center;
   }
