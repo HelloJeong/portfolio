@@ -7,6 +7,8 @@ const theme: DefaultTheme = {
     titleFontColor: "#5f5f5f",
     skillBackColor: "#c4c4c4",
     projectBackColor: "#ffb2b2",
+    projectSkillBackColor: "#ffebca",
+    projectSkillColor: "#794b3c",
   },
   flexCenter: css`
     display: flex;

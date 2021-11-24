@@ -9,6 +9,8 @@ declare module "styled-components" {
       titleFontColor: string;
       skillBackColor: string;
       projectBackColor: string;
+      projectSkillBackColor: string;
+      projectSkillColor: string;
     };
     flexCenter: css;
   }

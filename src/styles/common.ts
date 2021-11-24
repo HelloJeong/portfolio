@@ -20,7 +20,7 @@ export const StyledInner = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 1200px;
+  width: 1440px;
   padding-left: 30px;
   padding-right: 30px;
   margin-left: auto;

@@ -42,10 +42,12 @@ const StyledWorkSection = styled(StyledSection)`
 
 const StyledItemWrap = styled.div`
   ${(props) => props.theme.flexCenter};
+  margin-bottom: 30px;
 `;
 
 const StyledItemList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
 `;
