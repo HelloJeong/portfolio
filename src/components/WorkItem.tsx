@@ -13,7 +13,7 @@ const WorkItem: React.FC<IWorkType> = ({
   return (
     <StyledLi>
       <StyledImgWrap>
-        <img src={`/images/project-${img}`} alt={title} />
+        <img src={`./images/project-${img}`} alt={title} />
         <StyledMember>{member}인</StyledMember>
       </StyledImgWrap>
       <StyledTextureWrap>

@@ -24,7 +24,7 @@ const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
 
   return (
     <StyledLi>
-      <img src={`/images/skill-${img}`} alt={name} />
+      <img src={`./images/skill-${img}`} alt={name} />
       <h3>{name}</h3>
       <progress ref={itemRef} value="0" max="100" />
     </StyledLi>
