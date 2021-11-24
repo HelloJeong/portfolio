@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { ISkillType } from "../type";
 
 const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
+  const [progressValue, setProgressValue] = useState<number>(0);
   const itemRef = useRef<HTMLProgressElement>(null);
   useEffect(() => {
     let value = 1;
@@ -15,6 +16,7 @@ const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
         return;
       }
       itemRef.current.value = ++value;
+      setProgressValue(value);
     }, 10);
 
     return () => {
@@ -27,6 +29,7 @@ const SkillItem: React.FC<ISkillType> = ({ img, name, progress, type }) => {
       <img src={`./images/skill-${img}`} alt={name} />
       <h3>{name}</h3>
       <progress ref={itemRef} value="0" max="100" />
+      <span>{progressValue}%</span>
     </StyledLi>
   );
 };
@@ -68,6 +71,10 @@ const StyledLi = styled.li`
     &::-webkit-progress-value {
       background-color: ${(props) => props.theme.light.titleFontColor};
       border-radius: 8px;
+    }
+
+    @media ${(props) => props.theme.size.mobile} {
+      display: none;
     }
   }
 `;

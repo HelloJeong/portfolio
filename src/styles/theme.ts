@@ -1,6 +1,9 @@
 import { css, DefaultTheme } from "styled-components";
 
 const theme: DefaultTheme = {
+  size: {
+    mobile: "(max-width: 767px)",
+  },
   light: {
     basicFontColor: "#606060",
     navFontColor: "#b9b9b9",

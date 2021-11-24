@@ -50,4 +50,7 @@ const StyledItemList = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  @media ${(props) => props.theme.size.mobile} {
+    flex-direction: column;
+  }
 `;

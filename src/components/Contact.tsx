@@ -20,7 +20,7 @@ export default Contact;
 const StyledH3 = styled.h3`
   ${(props) => props.theme.flexCenter};
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #000;
   a {
