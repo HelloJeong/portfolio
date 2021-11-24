@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import bg from "../images/bg-header.jpg";
-import { StyledInner } from "../styles/common";
+import { StyledInnerColumnWrap } from "../styles/common";
 import { IHeaderProps } from "../type";
 import HeaderSlider from "./HeaderSlider";
 
@@ -22,11 +22,12 @@ const Header: React.FC<IHeaderProps> = ({ id }) => {
   return (
     <StyledHeader id={id}>
       <StyledBG />
-      <StyledTextureBlock ref={ref}>
-        <HeaderSlider counter={counter} />
-        <StyledH1>Javascript Developer</StyledH1>
-        <StyledH1>정연광입니다.</StyledH1>
-      </StyledTextureBlock>
+      <StyledHeadingWrap>
+        <StyledTextureBlock ref={ref}>
+          <HeaderSlider counter={counter} />
+          <StyledH1>Javascript Developer 정연광입니다.</StyledH1>
+        </StyledTextureBlock>
+      </StyledHeadingWrap>
     </StyledHeader>
   );
 };
@@ -50,21 +51,27 @@ const StyledBG = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* opacity: 0.5; */
 `;
 
-const StyledTextureBlock = styled(StyledInner)`
+const StyledTextureBlock = styled.div`
   position: relative;
   flex-direction: column;
-  font-size: 64px;
+  font-size: 4rem;
   font-weight: 700;
-  gap: 16px;
+  gap: 0.25em;
   color: #fff;
   opacity: 0;
   transition: 1s;
 `;
 
+const StyledHeadingWrap = styled(StyledInnerColumnWrap)`
+  gap: 16px;
+`;
+
 const StyledH1 = styled.h1`
-  height: 60px;
+  width: 100%;
   ${(props) => props.theme.flexCenter};
+  text-align: center;
+  word-break: keep-all;
+  line-height: 1.5;
 `;

@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import _ from "lodash";
+import Hamburger from "../images/Hamburger_icon.svg";
 
 /* eslint-disable jsx-a11y/anchor-is-valid, no-script-url */
 const Nav: React.FC = () => {
+  const [showNav, setShowNav] = useState<boolean>(false);
+
   const navRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     window.addEventListener(
@@ -22,7 +25,7 @@ const Nav: React.FC = () => {
   }, []);
   return (
     <StyledNav ref={navRef}>
-      <StyledUl>
+      <StyledUl show={showNav}>
         <StyledLi>
           <a href="#Home">Home</a>
         </StyledLi>
@@ -39,8 +42,12 @@ const Nav: React.FC = () => {
           <a href="#Contact">Contact</a>
         </StyledLi>
       </StyledUl>
+      <StyledHamburger img={Hamburger} onClick={onClickHamburger}></StyledHamburger>
     </StyledNav>
   );
+  function onClickHamburger() {
+    setShowNav(!showNav);
+  }
 };
 
 export default Nav;
@@ -66,15 +73,30 @@ const StyledNav = styled.nav`
       color: #5f5f5f;
     }
   }
+
+  @media ${(props) => props.theme.size.mobile} {
+    background-color: #fff;
+    ul li a {
+      color: #5f5f5f;
+    }
+    padding-right: 0;
+  }
 `;
 
-const StyledUl = styled.ul`
+const StyledUl = styled.ul<{ show: boolean }>`
   width: 800px;
   height: 60px;
   display: flex;
 
   li:first-child::before {
     display: none;
+  }
+
+  @media ${(props) => props.theme.size.mobile} {
+    display: ${(props) => (props.show ? "flex" : "none")};
+    flex-direction: column;
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -95,5 +117,28 @@ const StyledLi = styled.li`
     text-decoration: none;
     color: ${(props) => props.theme.light.navFontColor};
     font-size: 16px;
+  }
+
+  @media ${(props) => props.theme.size.mobile} {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    &::before {
+      display: none;
+    }
+  }
+`;
+
+const StyledHamburger = styled.div<{ img: string }>`
+  display: none;
+  width: 32px;
+  height: 32px;
+  background-image: url(${(props) => props.img});
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  @media ${(props) => props.theme.size.mobile} {
+    display: block;
   }
 `;

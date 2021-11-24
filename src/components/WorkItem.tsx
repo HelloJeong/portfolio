@@ -43,6 +43,11 @@ const StyledLi = styled.li`
   border-radius: 10px;
   overflow: hidden;
   padding-bottom: 20px;
+
+  @media ${(props) => props.theme.size.mobile} {
+    font-size: 1rem;
+    width: calc(100vw - 4em);
+  }
 `;
 
 const StyledImgWrap = styled.div`
