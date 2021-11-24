@@ -8,7 +8,10 @@ import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store =
+  process.env.NODE_ENV === "development"
+    ? createStore(rootReducer, composeWithDevTools())
+    : createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
