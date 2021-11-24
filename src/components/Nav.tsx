@@ -138,6 +138,7 @@ const StyledHamburger = styled.div<{ img: string }>`
   position: absolute;
   top: 15px;
   right: 15px;
+  cursor: pointer;
   @media ${(props) => props.theme.size.mobile} {
     display: block;
   }
