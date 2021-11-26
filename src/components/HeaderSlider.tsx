@@ -10,23 +10,24 @@ const HeaderSlider: React.FC<IHeaderSliderProps> = ({ counter }) => {
 
   useEffect(() => {
     if (counter) {
-      // todo : 마지막 -> 0번으로 갈 때 2배 시간을 대기 후 1번째로 이동
       const interval = setInterval(() => {
         if (!sliderRef.current) {
           return;
         }
-        if (selectedIndex < characters.length + 1) {
-          setSelectedIndex(selectedIndex + 1);
-        } else {
-          setSelectedIndex(1);
-        }
+        sliderRef.current.style.transition = `all 0.5s ease-in-out`;
+        sliderRef.current.style.transform = `translateY(-${selectedIndex}00%)`;
 
-        if (selectedIndex === characters.length + 1) {
-          sliderRef.current.style.transition = `0s`;
-          sliderRef.current.style.transform = `translateY(0)`;
+        if (selectedIndex === characters.length) {
+          setTimeout(() => {
+            if (!sliderRef.current) {
+              return;
+            }
+            sliderRef.current.style.transition = `0s`;
+            sliderRef.current.style.transform = `translateY(0)`;
+          }, 501);
+          setSelectedIndex(1);
         } else {
-          sliderRef.current.style.transition = `all 0.5s ease-in-out`;
-          sliderRef.current.style.transform = `translateY(-${selectedIndex}00%)`;
+          setSelectedIndex(selectedIndex + 1);
         }
       }, 1500);
 
