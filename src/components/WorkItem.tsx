@@ -94,8 +94,8 @@ const StyledSkillWrap = styled.div`
 `;
 
 const StyledSkill = styled.span`
-  font-size: 14px;
-  padding: 5px;
+  font-size: 1rem;
+  padding: 0.6em;
   border-radius: 20px;
   margin: 5px;
   background: ${(props) => props.theme.light.projectSkillBackColor};
@@ -107,7 +107,7 @@ const StyledTerm = styled.h3`
   width: 100%;
   height: 30px;
   box-sizing: border-box;
-  padding-right: 10px;
+  padding-right: 20px;
   display: flex;
   justify-content: flex-end;
 `;
@@ -116,8 +116,8 @@ const StyledText = styled.text`
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 10px;
-  line-height: 1.5;
+  padding: 0 20px;
+  line-height: 2;
   word-break: keep-all;
   white-space: pre-line;
 `;

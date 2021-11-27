@@ -116,12 +116,13 @@ const StyledLi = styled.li`
     height: 100%;
     text-decoration: none;
     color: ${(props) => props.theme.light.navFontColor};
-    font-size: 16px;
+    font-size: 1.4rem;
   }
 
   @media ${(props) => props.theme.size.mobile} {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    font-size: 2rem;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
     &::before {
       display: none;
     }
