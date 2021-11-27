@@ -5,10 +5,12 @@ import { ISkillState, ISkillType } from "../../type";
 // action.type 이 string 으로 추론되지 않고 'counter/INCREASE' 와 같이 실제 문자열 값으로 추론 되도록 해줍니다.
 
 const GET_SKILL = "skill/GET_SKILL" as const;
+const SORT_BEFORE = "skill/SORT_BEFORE" as const;
 const SORT_PROGRESS = "skill/SORT_PROGRESS" as const;
 const SORT_TYPE = "skill/SORT_TYPE" as const;
 
 export const getskill = () => ({ type: GET_SKILL });
+export const sortBefore = () => ({ type: SORT_BEFORE });
 export const sortProgress = () => ({ type: SORT_PROGRESS });
 export const sortType = () => ({ type: SORT_TYPE });
 
@@ -17,6 +19,7 @@ export const sortType = () => ({ type: SORT_TYPE });
 // 상단부에서 액션타입을 선언 할 떄 as const 를 하지 않으면 이 부분이 제대로 작동하지 않습니다.
 type SkillAction =
   | ReturnType<typeof getskill>
+  | ReturnType<typeof sortBefore>
   | ReturnType<typeof sortProgress>
   | ReturnType<typeof sortType>;
 
@@ -39,15 +42,27 @@ function reducer(state: ISkillState = initialState, action: SkillAction): ISkill
     case GET_SKILL:
       const skillList: ISkillState = skillFile;
       return skillList;
+    case SORT_BEFORE:
+      const tempBeforeSkillList: ISkillState = {
+        skills: (Array(state.skills.length) as ISkillType[]).fill({
+          img: "",
+          name: "",
+          progress: 0,
+          type: "",
+        }),
+      };
+      return { ...tempBeforeSkillList };
     case SORT_PROGRESS:
+      const tempProgressSkillList: ISkillState = skillFile;
       return {
         ...state,
-        skills: state.skills.sort((a, b) => b.progress - a.progress),
+        skills: tempProgressSkillList.skills.sort((a, b) => b.progress - a.progress),
       };
     case SORT_TYPE:
+      const tempTypeSkillList: ISkillState = skillFile;
       return {
         ...state,
-        skills: state.skills.sort(compareType),
+        skills: tempTypeSkillList.skills.sort(compareType),
       };
     default:
       return state;

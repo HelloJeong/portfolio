@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { RootState } from "../redux/modules";
-import { getskill, sortProgress, sortType } from "../redux/modules/skill";
+import { getskill, sortBefore, sortProgress, sortType } from "../redux/modules/skill";
 import { StyledH1, StyledInnerColumnWrap, StyledSection } from "../styles/common";
 import { ISkillProps } from "../type";
 import SkillItem from "./SkillItem";
@@ -37,13 +37,14 @@ const Skill: React.FC<ISkillProps> = ({ id }) => {
   );
 
   function onClickSort() {
-    if (sortState) {
-      // 수치로 변경
-      dispatch(sortProgress());
-    } else {
-      // 주제로 변경
-      dispatch(sortType());
-    }
+    dispatch(sortBefore());
+
+    const stateFunc = sortState ? sortProgress : sortType;
+
+    setTimeout(() => {
+      dispatch(stateFunc());
+    }, 0);
+
     setSortState(!sortState);
   }
 };
