@@ -24,7 +24,7 @@ const WorkItem: React.FC<IWorkType> = ({
           ))}
         </StyledSkillWrap>
         <StyledTerm>{`${start_date} ~ ${end_date}`}</StyledTerm>
-        <ul>
+        <ul style={{ listStyle: "inside" }}>
           {text.map((t, i) => (
             <StyledText key={`${title}-${i}`}>{t}</StyledText>
           ))}
