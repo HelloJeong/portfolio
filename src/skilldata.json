@@ -71,6 +71,12 @@
       "name": "GraphQL",
       "progress": 30,
       "type": "api"
+    },
+    {
+      "img": "rnexpo.svg",
+      "name": "RN Expo",
+      "progress": 25,
+      "type": "app"
     }
   ]
 }

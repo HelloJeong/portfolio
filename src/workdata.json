@@ -54,6 +54,19 @@
       "start_date": "2021-11",
       "end_date": "2021-11",
       "text": ["모든 기능을 라이브러리 없이 최대한 직접 구현"]
+    },
+    {
+      "img": "6.png",
+      "title": "로또 번호 추첨 앱",
+      "member": 1,
+      "skills": ["React-native", "Expo", "Typescript", "Firebase", "LottoAPI"],
+      "start_date": "2021-12",
+      "end_date": "2021-12",
+      "text": [
+        "react-native 경험 목적 expo로 제작",
+        "firebase를 이용해 역대 번호를 저장",
+        "react-native-cli를 배운 후 업그레이드 예정"
+      ]
     }
   ]
 }
