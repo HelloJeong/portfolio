@@ -19,12 +19,16 @@ const WorkItem: React.FC<IWorkType> = ({
       <StyledTextureWrap>
         <StyledTitle>{title}</StyledTitle>
         <StyledSkillWrap>
-          {skills.map((skill, idx) => (
-            <StyledSkill key={`${title}-${idx}`}>{skill}</StyledSkill>
+          {skills.map((skill) => (
+            <StyledSkill key={`${title}-${skill}`}>{skill}</StyledSkill>
           ))}
         </StyledSkillWrap>
         <StyledTerm>{`${start_date} ~ ${end_date}`}</StyledTerm>
-        <StyledText>{text}</StyledText>
+        <ul>
+          {text.map((t, i) => (
+            <StyledText key={`${title}-${i}`}>{t}</StyledText>
+          ))}
+        </ul>
       </StyledTextureWrap>
     </StyledLi>
   );
@@ -112,8 +116,7 @@ const StyledTerm = styled.h3`
   justify-content: flex-end;
 `;
 
-const StyledText = styled.text`
-  display: block;
+const StyledText = styled.li`
   width: 100%;
   box-sizing: border-box;
   padding: 0 20px;

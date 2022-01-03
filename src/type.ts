@@ -46,7 +46,7 @@ export interface IWorkType {
   skills: string[];
   start_date: string;
   end_date: string;
-  text: string;
+  text: string[];
 }
 
 export interface IWorkState {

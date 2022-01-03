@@ -3,20 +3,27 @@
     {
       "img": "1.png",
       "title": "실시간 버스 관제",
-      "member": 2,
+      "member": 3,
       "skills": ["php", "MySQL", "Sass"],
       "start_date": "2020-05",
       "end_date": "2020-08",
-      "text": "실시간으로 버스의 위치 정보와 운행 기록 등을 확인할 수 있는 홈페이지입니다. \nFront-End의 css는 SCSS를 사용했으며 기초적인 설계가 되어있는 상황에서 투입되어 페이지 제작, 데이터베이스 관리 등을 담당해 마무리를 했습니다. \n- Front-End, Back-End : PHP(80%) \n- Database : MySQL(90%)"
+      "text": [
+        "실시간으로 버스의 위치 정보와 운행 기록 등을 확인할 수 있는 서비스",
+        "프론트 페이지 제작, 데이터베이스 관리 등을 담당"
+      ]
     },
     {
       "img": "2.png",
       "title": "실시간 펌프 관제",
-      "member": 2,
+      "member": 3,
       "skills": ["Node.js", "Javascript", "Express.js", "MongoDB"],
       "start_date": "2021-05",
       "end_date": "2021-09",
-      "text": "실시간으로 펌프의 동작을 제어하거나 상태를 확인할 수 있는 홈페이지입니다.\nFront-End는 parcel-bundler를 활용한 순수 html+scss+js를 사용했습니다.\n파이썬 프로그램과 연동된 펌프를 웹과 동기화하여 웹에서 펌프를 제어할 수 있게 하는게 주목적이었습니다. 추가로 웹에서는 연동된 펌프의 정보를 파악할 수 있어야 했습니다.\n- Front-End(100%)\n- Back-End(100%)\n- Database(100%)\n- 파이썬 프로그램(0%)"
+      "text": [
+        "실시간으로 펌프의 동작을 제어하거나 상태를 확인할 수 있는 서비스",
+        "parcel-bundler를 활용한 html+scss+js를 사용",
+        "파이썬 프로그램과 연동된 펌프를 웹과 동기화하여 웹에서 펌프를 제어"
+      ]
     },
     {
       "img": "3.png",
@@ -25,7 +32,7 @@
       "skills": ["React.js", "Next.js", "Sanity", "Node.js", "Sass", "Typescript"],
       "start_date": "2021-07",
       "end_date": "2021-08",
-      "text": "재직 중인 학원의 홈페이지 제작을 기획부터 배포까지 다 맡아서 했습니다.\n학원 내에 비치된 컴퓨터를 서버로 두고 pm2로 배포했습니다.\n- Front-End : React.js(next.js, TS, 100%)\n- Back-End : Express.js(PM2를 사용하기 위함)\n- Database : Sanity"
+      "text": ["기획부터 배포까지", "학원 내에 비치된 컴퓨터를 서버로 두고 pm2로 배포"]
     },
     {
       "img": "4.png",
@@ -34,7 +41,10 @@
       "skills": ["MongoDB", "Express.js", "React.js", "Node.js", "Typescript", "Sass"],
       "start_date": "2021-08",
       "end_date": "2021-10",
-      "text": "세무회사 내부에서만 사용하는 회사사원, 거래처, 수금 등의 관리를 위한 백오피스 홈페이지입니다.\n관리자와 게스트의 구분이 필요한 로그인 로직, 각 관리 기능에 CRUD가 필요했고 모두 서로의 데이터에 의존하는 관계를 가지고 있었습니다.\n프린트의 출력이 잦다하여 프린트 미디어 쿼리도 작성했습니다.\n- Front-End(100%)\n- Back-End(100%)\n- Database(100%)"
+      "text": [
+        "세무회사에서 사용하는 회사사원, 거래처, 수금 등의 관리를 위한 백오피스 홈페이지",
+        "관리자와 게스트의 구분이 필요한 로그인 로직, 관리 기능 CRUD 등"
+      ]
     },
     {
       "img": "5.png",
@@ -43,7 +53,7 @@
       "skills": ["React.js", "Redux", "styled-components", "Typescript", "Node.js"],
       "start_date": "2021-11",
       "end_date": "2021-11",
-      "text": "현재 보고계시는 홈페이지입니다.\n모든 기능을 라이브러리 없이 최대한 직접 구현하려했습니다. styled-components와 반응형웹에 대해 많이 배우게 된 프로젝트입니다.\n추후 계획은 AWS 등을 활용하여 JSON 파일 대신 DB와의 연동입니다.\n- Front-End(100%)"
+      "text": ["모든 기능을 라이브러리 없이 최대한 직접 구현"]
     }
   ]
 }
